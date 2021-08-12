@@ -6720,7 +6720,7 @@ public:
 	{
 		string declaration = 
 			"\n\n"
-			"// 3Dmigoto declarations\n";
+			"//  declarations\n";
 
 		// Also inject the helper macro of 'cmp' to fix any boolean comparisons.
 		// This is a bit of a hack, but simply adds a "-" in front of the comparison,
@@ -6761,8 +6761,8 @@ public:
 
 	void WriteHeaderDeclarations()
 	{
-		string header =
-			"// ---- Created with 3Dmigoto v" + string(VER_FILE_VERSION_STR) + " on " + LogTime();
+		string header = "// " + LogTime();
+			//"// ---- Created with  v" + string(VER_FILE_VERSION_STR) + " on " + LogTime();
 
 		// using .begin() to ensure first lines in files.
 		mOutput.insert(mOutput.begin(), header.c_str(), header.c_str() + header.length());
