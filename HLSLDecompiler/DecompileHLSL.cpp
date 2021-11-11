@@ -5847,8 +5847,13 @@ public:
 						appendOutput(buffer);
 						break;
 					case OPCODE_CASE:
-						sprintf(buffer, "  case %s :", ci(op1).substr(2, 1).c_str());
+					{
+						string CASE_ID = ci(op1);
+						//ci(op1) 返回字符串格式 l(caseid)
+						sprintf(buffer, "  case %s :", CASE_ID.substr(2, CASE_ID.length() - 3).c_str());
 						appendOutput(buffer);
+
+					}
 						break;
 					case OPCODE_ENDSWITCH:
 						sprintf(buffer, "  }\n");
